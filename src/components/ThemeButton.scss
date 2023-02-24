@@ -1,0 +1,15 @@
+.themeContainer {
+  height: 10vh; // position: absolute;
+  .themeButton {
+    margin: 2vh;
+    float: right;
+    position: relative;
+    .switch-checkbox {
+      border: none;
+      background-color: transparent;
+      .switch-label {
+        cursor: pointer;
+      }
+    }
+  }
+}

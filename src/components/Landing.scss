@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap");
+:root {
+  --background-button: var(--color-light);
+  --text-button: var(--text-light);
+  --background-input: var(--input-light);
+}
+:root.dark-theme {
+  --background-button: var(--color-dark);
+  --text-button: var(--text-dark);
+  --background-input: var(--input-dark);
+}
+
+.landing {
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  .landingLeft,
+  .landingRight {
+    width: 50%;
+    text-align: center;
+  }
+}
+
+.labelContainer {
+  display: flex;
+  .labelLeft,
+  .labelRight {
+    width: 50%;
+    a {
+      float: right;
+    }
+  }
+}
+
+.imageBoxes {
+  display: flex;
+  height: 100%;
+  padding: 12%;
+  .col3 {
+    width: 33.3%;
+    .box1 {
+      display: flex;
+      height: 33.3%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .col2 {
+        width: 50%;
+        .row2 {
+          height: 50%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.salesBox {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url("./icons/sales.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10%;
+  img {
+    width: 40%;
+    height: 10%;
+  }
+  p {
+    text-align: left;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+  }
+}
+.boxColor {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+.loginContainer,
+.forgetContainer,
+.salesContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  font-style: normal;
+  font-weight: 500;
+}
+.loginForm,
+.forgetPassword,
+.salesForm {
+  width: 60%;
+  margin: auto;
+  img {
+    width: 30%;
+  }
+  h2 {
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 16px;
+  }
+
+  .inputContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0rem;
+    label {
+      text-align: left;
+    }
+    input {
+      background: var(--background-input);
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      height: 36px;
+      padding: 0 0.7rem;
+    }
+    input:focus {
+      outline: 1px solid #10cccb;
+      background-color: #ffffff;
+    }
+  }
+  button {
+    background: var(--background-button);
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--text-button);
+    padding: 2vh;
+    width: 100%;
+    cursor: pointer;
+  }
+}
+p {
+  margin: 2vh auto;
+}
+a {
+  text-decoration: none;
+  color: #10cccb;
+}
+.goBack {
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 50%;
+  padding: 10px;
+  height: 45px;
+  cursor: pointer;
+  margin: 10%;
+}
+
+//Left
+.landingLeft {
+  position: relative;
+  overflow: hidden;
+  .imageBoxes {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transition: 0.5s;
+  }
+  .salesBox {
+    position: absolute;
+    width: 70%;
+    left: -101%;
+    transition: 0.5s;
+  }
+}
+.landingRight {
+  position: relative;
+  overflow: hidden;
+  .loginContainer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transition: 0.5s;
+  }
+  .forgetContainer {
+    text-align: left;
+    position: absolute;
+    width: 100%;
+    left: -101%;
+    transition: 0.5s;
+    p {
+      text-align: center;
+    }
+  }
+  .salesContainer {
+    width: 100%;
+    position: absolute;
+    margin: auto -10%;
+    width: 100%;
+    top: -101%;
+    transition: 0.5s;
+    h2 {
+      text-align: left;
+    }
+    .inputGroup {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .inputContainer {
+        position: relative;
+        width: 45%;
+      }
+    }
+  }
+}
+
+$breakpoint-tablet: 769px;
+$breakpoint-mobileL: 426px;
+@media screen and (max-width: $breakpoint-tablet) {
+  .landing {
+    .landingRight {
+      .loginContainer,
+      .forgetContainer {
+        .loginForm,
+        .forgetPassword {
+          width: 80%;
+        }
+      }
+    }
+    .landingLeft {
+      .imageBoxes {
+        padding: 15% 0% 15% 10%;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobileL) {
+  .landing {
+    // flex-direction: column;
+    width: 100%;
+    .landingLeft,
+    .landingRight {
+      width: 100%;
+      overflow: unset;
+    }
+    .landingLeft {
+      display: none;
+    }
+    .salesContainer{
+      margin: auto;
+    }
+  }
+}
