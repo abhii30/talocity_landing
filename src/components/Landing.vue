@@ -99,7 +99,7 @@ export default {
         </div>
       </div>
       <div class="salesBox" id="sal">
-        <img src="./icons/Logo Website 1.png" alt="Logo Horizontal" />
+        <img src="./icons/Logo_Website.png" alt="Logo Horizontal" />
         <p>
           Discover end-to-end hiring experience platform with video interview
           and assessments.
