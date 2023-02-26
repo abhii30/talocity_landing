@@ -1,15 +1,15 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <div><MyInput type="email" placeholder="Enter your email address" required/></div>
+  >
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<script>
+import MyInput from "./Input.vue";
+export default {
+  // name: "MyForm",
+  components: {
+    MyInput,
+  },
+};
+</script>
+<style></style>
