@@ -11,12 +11,12 @@ export default {
 </script>
 
 <template>
-  <nav>
+  <!-- <nav>
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/about">About</RouterLink>
-  </nav>
+  </nav> -->
   <!-- <ThemeButton /> -->
-  <!-- <Landing /> -->
-  <RouterView />
+  <Landing />
+  <!-- <RouterView /> -->
 </template>
 <style></style>

@@ -24,12 +24,13 @@
 }
 
 .labelContainer {
+  position: absolute;
   display: flex;
-  .labelLeft,
   .labelRight {
-    width: 50%;
+    float: right;
+    width: 100%;
     a {
-      float: right;
+      position: relative;
     }
   }
 }
@@ -109,26 +110,6 @@
     font-size: 16px;
   }
 
-  .inputContainer {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0rem;
-    label {
-      text-align: left;
-    }
-    input {
-      background: var(--background-input);
-      border: 1px solid #dadce0;
-      border-radius: 8px;
-      height: 36px;
-      padding: 0 0.7rem;
-    }
-    input:focus {
-      outline: 1px solid #10cccb;
-      background-color: #ffffff;
-    }
-  }
   button {
     background: var(--background-button);
     border: none;

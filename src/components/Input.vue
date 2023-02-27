@@ -1,14 +1,20 @@
 <template>
-  <div>
-    <input
-      v-model="inputValue"
-      :type="type"
-      :placeholder="placeholder"
-      :required="required"
-      @input="validateEmail"
-      @blur="showError"
-    />
-    <span v-if="error" class="error">{{ error }}</span>
+  <div class="inputContainer">
+    <label :for="inputId">{{ label }}</label>
+    <div class="inputWrapper">
+      <input
+        v-model="inputValue"
+        :type="type"
+        :placeholder="placeholder"
+        :required="required"
+        :id="inputId"
+        @focus="reset"
+        @blur="validateHandler"
+        :class="{ error: error }"
+      />
+      <!-- <img src="./icons/error_icon.png" alt="" class="errorIcon" v-if="error" /> -->
+    </div>
+    <span class="errorMessage">{{ error }}</span>
   </div>
 </template>
 
@@ -26,28 +32,60 @@ export default {
     },
     required: {
       type: Boolean,
-      default: false,
+      default: true,
+    },
+    label: {
+      type: String,
+      default: "",
     },
   },
   data() {
     return {
       inputValue: "",
       error: "",
+      inputId: `input-${Math.floor(Math.random() * 1000000)}`, // generate a unique ID for the input element
     };
   },
+  // computed: {
+  //   isPasswordType() {
+  //     return this.type === "password";
+  //   },
+  // },
   methods: {
+    validateHandler() {
+      switch (this.type) {
+        case "email":
+          this.validateEmail();
+          break;
+        case "password":
+          this.validatePassword();
+          break;
+        default:
+          break;
+      }
+    },
+    validatePassword() {
+      if (this.inputValue.length < 8) {
+        this.error = "Password must be at least 8 characters";
+        console.log(this.error);
+      } else {
+        this.error = "";
+        console.log(this.error);
+      }
+    },
     validateEmail() {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(this.inputValue)) {
-        this.error = "Invalid email address";
+        this.error = "Please enter correct email address";
+        console.log(this.error);
       } else {
         this.error = "";
+        console.log(this.error);
       }
     },
-    showError() {
-      if (!this.inputValue) {
-        this.error = "Email address is required";
-      }
+    reset() {
+      this.inputValue = "";
+      this.error = "";
     },
   },
 };

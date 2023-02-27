@@ -1,6 +1,10 @@
 <template>
-  <div><MyInput type="email" placeholder="Enter your email address" required/></div>
-  >
+  <MyInput
+    type="email"
+    placeholder="Enter your email address"
+    required
+    label="Email Address"
+  />
 </template>
 
 <script>
