@@ -36,7 +36,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: "Enter your password",
+      default: "",
     },
     required: {
       type: Boolean,

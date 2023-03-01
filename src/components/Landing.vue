@@ -123,7 +123,7 @@ export default {
             <a href="#">Forgot Password?</a>
           </div>
           <!-- <MyInput type="password" required label="Password" /> -->
-          <InputPassword placeholder="Password" required label="Password" />
+          <InputPassword required label="Password" />
           <button class="button" type="submit">Login</button>
           <p>
             Don't have an account?

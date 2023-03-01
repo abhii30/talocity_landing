@@ -52,10 +52,8 @@ export default {
         @click="toggleTheme"
         id="checkbox"
         type="checkbox"
-        class="material-icons"
+        class="switch-checkbox"
       >
-        {{ isLightTheme ? "light_mode" : "mode_night" }}
-
         <label for="checkbox" class="switch-label">
           <span v-if="isLightTheme" class="material-icons"> mode_night </span>
           <span v-else class="material-icons md-light"> light_mode </span>
