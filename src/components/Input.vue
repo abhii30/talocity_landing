@@ -1,19 +1,17 @@
 <template>
   <div class="inputContainer">
     <label :for="inputId">{{ label }}</label>
-    <div class="inputWrapper">
-      <input
-        v-model="inputValue"
-        :type="type"
-        :placeholder="placeholder"
-        :required="required"
-        :id="inputId"
-        @focus="reset"
-        @blur="validateHandler"
-        :class="{ error: error }"
-      />
-      <!-- <img src="./icons/error_icon.png" alt="" class="errorIcon" v-if="error" /> -->
-    </div>
+    <input
+      v-model="inputValue"
+      :type="type"
+      :placeholder="placeholder"
+      :required="required"
+      :id="inputId"
+      @focus="reset"
+      @blur="validateHandler"
+      :class="{ error: error }"
+    />
+    <!-- <img src="./icons/error_icon.png" alt="" class="errorIcon" v-if="error" /> -->
     <span class="errorMessage">{{ error }}</span>
   </div>
 </template>
@@ -46,11 +44,6 @@ export default {
       inputId: `input-${Math.floor(Math.random() * 1000000)}`, // generate a unique ID for the input element
     };
   },
-  // computed: {
-  //   isPasswordType() {
-  //     return this.type === "password";
-  //   },
-  // },
   methods: {
     validateHandler() {
       switch (this.type) {
@@ -84,7 +77,6 @@ export default {
       }
     },
     reset() {
-      this.inputValue = "";
       this.error = "";
     },
   },

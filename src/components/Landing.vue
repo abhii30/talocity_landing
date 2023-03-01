@@ -1,5 +1,6 @@
 <script>
 import MyInput from "./Input.vue";
+import InputPassword from "./InputPassword.vue";
 export default {
   data() {
     return {
@@ -32,6 +33,7 @@ export default {
   },
   components: {
     MyInput,
+    InputPassword,
   },
 };
 </script>
@@ -117,8 +119,12 @@ export default {
           <h2>Login</h2>
           <h3>Welcome back</h3>
           <MyInput type="email" required label="Email Address" />
-          <MyInput type="password" required label="Password" />
-          <button type="submit">Login</button>
+          <div class="forgotPassword" @click="forPass">
+            <a href="#">Forgot Password?</a>
+          </div>
+          <!-- <MyInput type="password" required label="Password" /> -->
+          <InputPassword placeholder="Password" required label="Password" />
+          <button class="button" type="submit">Login</button>
           <p>
             Don't have an account?
             <a href="#" @click="contactSales">Contact Sales</a>
@@ -136,7 +142,7 @@ export default {
             instructions to reset your password.
           </h3>
           <MyInput type="email" required label="Email Address" />
-          <button type="submit">Send Reset Instructions</button>
+          <button class="button" type="submit">Send Reset Instructions</button>
           <p>
             Don't have an account?
             <a href="#" @click="contactSales">Contact Sales</a>
@@ -154,7 +160,7 @@ export default {
           <MyInput type="text" required label="Company Name" />
           <MyInput type="number" required label="Phone Number" />
           <MyInput type="text" required label="Message" class="message" />
-          <button type="submit">Contact Sales</button>
+          <button class="button" type="submit">Contact Sales</button>
           <p>Already have an account? <a href="#" @click="login">Login</a></p>
         </form>
       </div>

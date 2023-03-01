@@ -1,9 +1,9 @@
 .themeContainer {
-  height: 10vh; // position: absolute;
+  position: absolute;
+  z-index: 1;
+  right: 0;
   .themeButton {
     margin: 2vh;
-    float: right;
-    position: relative;
     .switch-checkbox {
       border: none;
       background-color: transparent;
@@ -12,4 +12,8 @@
       }
     }
   }
+}
+
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
 }

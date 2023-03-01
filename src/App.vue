@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from "vue-router";
 import Landing from "./components/Landing.vue";
 import ThemeButton from "./components/ThemeButton.vue";
+import "@mdi/font/css/materialdesignicons.min.css";
 export default {
   components: {
     Landing,
@@ -15,7 +16,7 @@ export default {
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/about">About</RouterLink>
   </nav> -->
-  <!-- <ThemeButton /> -->
+  <ThemeButton />
   <Landing />
   <!-- <RouterView /> -->
 </template>

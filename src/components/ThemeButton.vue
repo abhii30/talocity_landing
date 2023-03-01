@@ -3,6 +3,7 @@ export default {
   data() {
     return {
       userTheme: "light-theme",
+      isLightTheme: true,
     };
   },
   methods: {
@@ -10,6 +11,7 @@ export default {
       const activeTheme = localStorage.getItem("user-theme");
       if (activeTheme === "light-theme") {
         this.setTheme("dark-theme");
+        this.isLightTheme = true;
       } else {
         this.setTheme("light-theme");
       }
@@ -50,11 +52,13 @@ export default {
         @click="toggleTheme"
         id="checkbox"
         type="checkbox"
-        class="switch-checkbox"
+        class="material-icons"
       >
+        {{ isLightTheme ? "light_mode" : "mode_night" }}
+
         <label for="checkbox" class="switch-label">
-          <!-- <span>🌙</span> -->
-          <span>☀️</span>
+          <span v-if="isLightTheme" class="material-icons"> mode_night </span>
+          <span v-else class="material-icons md-light"> light_mode </span>
           <div
             class="switch-toggle"
             :class="{ 'switch-toggle-checked': userTheme === 'dark-theme' }"

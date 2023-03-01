@@ -80,6 +80,11 @@
     line-height: 40px;
   }
 }
+.forgotPassword {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+}
 .boxColor {
   width: 100%;
   height: 100%;
@@ -95,6 +100,7 @@
   font-style: normal;
   font-weight: 500;
 }
+
 .loginForm,
 .forgetPassword,
 .salesForm {
@@ -110,7 +116,7 @@
     font-size: 16px;
   }
 
-  button {
+  .button {
     background: var(--background-button);
     border: none;
     border-radius: 8px;
