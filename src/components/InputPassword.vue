@@ -14,7 +14,7 @@
       </button>
     </div>
     <span class="password-validator" v-if="passwordValidator">
-      {{ passwordValidator}}
+      {{ passwordValidator }}
     </span>
   </div>
 </template>
@@ -53,19 +53,24 @@ export default {
     passwordValidator() {
       let errors = [];
       if (this.inputPassword.length < 8) {
-        errors.push("Password must be at least 8 characters long.");
+        errors.push("Password must be at least 8 characters long. \n");
       }
       if (!/[A-Z]/.test(this.inputPassword)) {
-        errors.push("Password must contain at least one uppercase letter.");
+        errors.push("Password must contain at least one uppercase letter.\n");
       }
       if (!/[a-z]/.test(this.inputPassword)) {
-        errors.push("Password must contain at least one lowercase letter.");
+        errors.push("Password must contain at least one lowercase letter.\n");
       }
       if (!/\d/.test(this.inputPassword)) {
-        errors.push("Password must contain at least one number.");
+        errors.push("Password must contain at least one number.\n");
       }
       if (!/[^a-zA-Z\d]/.test(this.inputPassword)) {
-        errors.push("Password must contain at least one special character.");
+        errors.push("Password must contain at least one special character.\n");
+      }
+      if (/(.)\1\1\1/.test(this.inputPassword)) {
+        errors.push(
+          "Contains 4 consecutive characters (e.g. '1111', 'aaaa') \n"
+        );
       }
       return errors.join(" ");
     },
