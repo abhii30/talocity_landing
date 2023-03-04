@@ -8,12 +8,14 @@
         :placeholder="placeholder"
         :id="passwordId"
         :required="required"
+        @focus="showPopup = true"
+        @blur="showPopup = false"
       />
       <button @click="toggleShowPassword" class="material-icons">
         {{ showPassword ? "visibility" : "visibility_off" }}
       </button>
     </div>
-    <span class="password-validator" v-if="passwordValidator">
+    <span class="password-validator" v-if="passwordValidator && showPopup">
       {{ passwordValidator }}
     </span>
   </div>
@@ -26,6 +28,7 @@ export default {
     return {
       inputPassword: "",
       showPassword: false,
+      showPopup: false,
       passwordId: `password-${Math.floor(Math.random() * 1000000)}`,
     };
   },

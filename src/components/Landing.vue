@@ -1,5 +1,5 @@
 <script>
-import MyInput from "./Input.vue";
+import MyInput from "./myInput.vue";
 import InputPassword from "./InputPassword.vue";
 export default {
   data() {

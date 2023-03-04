@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import MyInput from "./Input.vue";
+import MyInput from "./myInput.vue";
 export default {
   // name: "MyForm",
   components: {
