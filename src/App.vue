@@ -19,8 +19,8 @@ export default {
     <RouterLink to="/about">About</RouterLink>
   </nav> -->
   <!-- <ThemeButton /> -->
-  <!-- <Landing /> -->
-  <SalesForm/>
+  <Landing />
+  <!-- <SalesForm/> -->
   <!-- <RouterView /> -->
 </template>
 <style></style>

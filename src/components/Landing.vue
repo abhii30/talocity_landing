@@ -1,6 +1,7 @@
 <script>
 import MyInput from "./myInput.vue";
 import InputPassword from "./InputPassword.vue";
+import LoginForm from "./LoginForm.vue";
 export default {
   data() {
     return {
@@ -34,7 +35,9 @@ export default {
   components: {
     MyInput,
     InputPassword,
+    LoginForm,
   },
+  props: {},
 };
 </script>
 
@@ -114,7 +117,12 @@ export default {
     </div>
     <div class="landingRight" id="lar">
       <div class="loginContainer" id="log">
-        <form action="" class="loginForm">
+        <LoginForm
+          class="loginForm"
+          :forPass="forPass"
+          :contactSales="contactSales"
+        />
+        <!-- <form action="" class="loginForm">
           <img src="./icons/Logo_Talocity.png" alt="" />
           <h2>Login</h2>
           <h3>Welcome back</h3>
@@ -122,14 +130,14 @@ export default {
           <div class="forgotPassword" @click="forPass">
             <a href="#">Forgot Password?</a>
           </div>
-          <!-- <MyInput type="password" required label="Password" /> -->
+          <MyInput type="password" required label="Password" />
           <InputPassword required label="Password" />
           <button class="button" type="submit">Login</button>
           <p>
             Don't have an account?
             <a href="#" @click="contactSales">Contact Sales</a>
           </p>
-        </form>
+        </form> -->
       </div>
       <div class="forgetContainer" id="for">
         <img class="goBack" src="./icons/back.png" alt="Back" @click="login" />
