@@ -4,15 +4,11 @@
     <h2>Login</h2>
     <h3>Welcome back</h3>
     <div class="componentContainer">
-      <Input
-        label="Email Address"
-        id="email"
-        type="email"
-        v-model="formData.email"
-      />
+      <Input label="Email Address" id="email" type="email" v-model="email" />
       <span v-for="error in v$.email.$errors" :key="error.$uid">{{
         error.$message
       }}</span>
+      <!-- {{ v$.email.$errors }} -->
     </div>
     <div class="forgotPassword" @click="forPass">
       <a href="#">Forgot Password?</a>
@@ -22,10 +18,10 @@
         label="Password"
         id="password"
         type="password"
-        v-model="formData.password"
+        v-model="password"
       />
-      <p>{{ formData.password }}</p>
-      <p>{{ formData.email }}</p>
+      <!-- <p>{{ password }}</p>
+      <p>{{ email }}</p> -->
       <span v-for="error in v$.password.$errors" :key="error.$uid">{{
         error.$message
       }}</span>
@@ -39,8 +35,8 @@
 </template>
 
 <script>
-import { reactive } from "vue";
-import Input from "./Input.vue";
+// import { reactive } from "vue";
+import Input from "../components/Input.vue";
 import useVuelidate from "@vuelidate/core";
 import { email, minLength, required } from "@vuelidate/validators";
 
@@ -50,15 +46,15 @@ export default {
   },
   data() {
     return {
-      formData: reactive({
-        email: "",
-        password: "",
-      }),
-      rules: {
-        email: { required, email },
-        password: { required, minLength: minLength(8) },
-      },
-      v$: useVuelidate(this.rules, this.formData),
+      v$: useVuelidate(),
+      email: "",
+      password: "",
+    };
+  },
+  validations() {
+    return {
+      email: { required, email },
+      password: { required, minLength: minLength(8) },
     };
   },
   props: {
@@ -73,12 +69,19 @@ export default {
   },
   methods: {
     submitForm() {
-      const result = this.v$.value.$validate();
-      if (result) {
+      this.v$.$validate();
+      if (!this.v$.$error) {
         alert("Form is valid");
       } else {
         alert("Form is invalid");
       }
+      console.log(this.v$);
+      // this.$v.$touch();
+      // if (this.$v.$invalid) {
+      //   alert("Form is invalid");
+      // } else {
+      //   alert("Form is valid");
+      // }
     },
   },
 };

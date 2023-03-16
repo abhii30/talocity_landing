@@ -1,6 +1,6 @@
 <script>
-import MyInput from "./myInput.vue";
-import InputPassword from "./InputPassword.vue";
+import MyInput from "../components/myInput.vue";
+import InputPassword from "../components/InputPassword.vue";
 import LoginForm from "./LoginForm.vue";
 export default {
   data() {
@@ -46,17 +46,17 @@ export default {
     <div class="landingLeft" id="laf">
       <div class="imageBoxes" id="img">
         <div class="col3">
-          <div class="box1"><img src="./icons/1.png" alt="" /></div>
+          <div class="box1"><img src="../icons/1.png" alt="" /></div>
           <div class="box1">
             <div class="boxColor" style="background-color: #e7fafe"></div>
           </div>
-          <div class="box1"><img src="./icons/2.png" alt="" /></div>
+          <div class="box1"><img src="../icons/2.png" alt="" /></div>
         </div>
         <div class="col3">
           <div class="box1">
             <div class="boxColor" style="background-color: #f3f2ff"></div>
           </div>
-          <div class="box1"><img src="./icons/3.png" alt="" /></div>
+          <div class="box1"><img src="../icons/3.png" alt="" /></div>
           <div class="box1">
             <div class="col2">
               <div class="row2">
@@ -66,7 +66,7 @@ export default {
             </div>
             <div class="col2">
               <div class="row2"></div>
-              <div class="row2"><img src="./icons/4.png" alt="" /></div>
+              <div class="row2"><img src="../icons/4.png" alt="" /></div>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default {
           <div class="box1">
             <div class="col2">
               <div class="row2"></div>
-              <div class="row2"><img src="./icons/5.png" alt="" /></div>
+              <div class="row2"><img src="../icons/5.png" alt="" /></div>
             </div>
             <div class="col2">
               <div class="row2"></div>
@@ -97,7 +97,7 @@ export default {
           </div>
           <div class="box1">
             <div class="col2">
-              <div class="row2"><img src="./icons/6.png" alt="" /></div>
+              <div class="row2"><img src="../icons/6.png" alt="" /></div>
               <div class="row2"></div>
             </div>
             <div class="col2">
@@ -108,7 +108,7 @@ export default {
         </div>
       </div>
       <div class="salesBox" id="sal">
-        <img src="./icons/Logo_Website.png" alt="Logo Horizontal" />
+        <img src="../icons/Logo_Website.png" alt="Logo Horizontal" />
         <p>
           Discover end-to-end hiring experience platform with video interview
           and assessments.
@@ -122,25 +122,9 @@ export default {
           :forPass="forPass"
           :contactSales="contactSales"
         />
-        <!-- <form action="" class="loginForm">
-          <img src="./icons/Logo_Talocity.png" alt="" />
-          <h2>Login</h2>
-          <h3>Welcome back</h3>
-          <MyInput type="email" required label="Email Address" />
-          <div class="forgotPassword" @click="forPass">
-            <a href="#">Forgot Password?</a>
-          </div>
-          <MyInput type="password" required label="Password" />
-          <InputPassword required label="Password" />
-          <button class="button" type="submit">Login</button>
-          <p>
-            Don't have an account?
-            <a href="#" @click="contactSales">Contact Sales</a>
-          </p>
-        </form> -->
       </div>
       <div class="forgetContainer" id="for">
-        <img class="goBack" src="./icons/back.png" alt="Back" @click="login" />
+        <img class="goBack" src="../icons/back.png" alt="Back" @click="login" />
 
         <div class="forgetPassword">
           <h2>Forgot Password?</h2>

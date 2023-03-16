@@ -48,7 +48,7 @@ const submitForm = async () => {
 export default {
   components: {
     Input1,
-  },
+},
   setup() {
     return {
       formData,
