@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="submitForm">
-    <img src="./icons/Logo_Talocity.png" alt="" />
+    <img src="../icons/Logo_Talocity.png" alt="" />
     <h2>Login</h2>
     <h3>Welcome back</h3>
     <div class="componentContainer">
