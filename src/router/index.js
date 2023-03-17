@@ -2,6 +2,9 @@ import { createRouter, createWebHistory } from "vue-router";
 import Landing from "../UI/Landing.vue";
 import LandingBrand from "../UI/LandingBrand.vue";
 // import About from "../UI/AboutView.vue";
+// import ProgressBar from "../components/ProgressBar.vue";
+// import Draft from "../components/Draft.vue";
+import Drafts from "../UI/Drafts.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,11 +19,11 @@ const router = createRouter({
       name: "brand",
       component: LandingBrand,
     },
-    // {
-    //   path: "/about",
-    //   name: "about",
-    //   component: About,
-    // },
+    {
+      path: "/about",
+      name: "about",
+      component: Drafts,
+    },
   ],
 });
 
