@@ -1,0 +1,29 @@
+{
+    "Links":[
+    {
+        "id":1,
+        "text":"Jobs"
+    },
+    {
+        "id":2,
+        "text":"Applicants"
+    },
+    {
+        "id":3,
+        "text":"Track"
+    },
+    {
+        "id":4,
+        "text":"Batch Upload"
+    },
+    {
+        "id":5,
+        "text":"Assessments"
+    },
+    {
+        "id":6,
+        "text":"Company Profile"
+    }
+
+]
+}
