@@ -44,7 +44,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .draft {
   font-family: "Inter";
   font-style: normal;

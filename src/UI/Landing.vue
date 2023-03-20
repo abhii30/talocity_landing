@@ -29,8 +29,8 @@ export default {
     },
   },
   mounted() {
-    this.getBrand();
-    console.log(this.$route.params.brand);
+    // this.getBrand();
+    // console.log(this.$route.params.brand);
   },
   components: {
     MyInput,
