@@ -33,7 +33,7 @@ export default {
     // console.log(this.$route.params.brand);
   },
   components: {
-    MyInput,
+    // MyInput,
     InputPassword,
     LoginForm,
   },
