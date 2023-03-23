@@ -1,9 +1,11 @@
 <script>
+import NavBar from '../Views/Navbar.vue'
 import Draft from "../components/Draft.vue";
 export default {
   name: "Drafts",
   components: {
     Draft,
+    NavBar
   },
   data() {
     return {
@@ -27,6 +29,9 @@ export default {
 </script>
 
 <template>
+  <nav>
+    <NavBar></NavBar>
+  </nav>
   <div class="drafts">
     <Draft
       v-for="draft in drafts"
